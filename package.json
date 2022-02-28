@@ -1,0 +1,45 @@
+{
+  "name": "yuber-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "proxy": "http://localhost:4000",
+  "repository": "https://github.com/yagnesh16697/yuber-server.git",
+  "author": "yagnesh16697 <yagnesh16697@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@graphql-tools/load-files": "^6.5.3",
+    "@graphql-tools/merge": "^8.2.3",
+    "@graphql-tools/schema": "^8.3.2",
+    "bcrypt": "^5.0.1",
+    "class-validator": "^0.13.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "graphql-tools": "^8.2.0",
+    "graphql-yoga": "^1.18.3",
+    "helmet": "^5.0.2",
+    "merge-graphql-schemas": "^1.7.8",
+    "morgan": "^1.10.0",
+    "pg": "^8.7.3",
+    "typeorm": "^0.2.44"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/helmet": "^4.0.0",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^17.0.21",
+    "babel-runtime": "^6.26.0",
+    "gql-merge": "^0.0.6",
+    "graphql-to-typescript": "^0.1.2",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.5.0",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^4.5.5"
+  },
+  "scripts": {
+    "predev": "yarn run types",
+    "dev": "cd src && nodemon --exec ts-node index.ts -e ts,graphql ",
+    "pretypes": "gql-merge --out-file ./src/schema.graphql ./src/api/**/*.graphql",
+    "types": "graphql-to-typescript ./src/schema.graphql ./src/types/graph.d.ts"
+  }
+}
