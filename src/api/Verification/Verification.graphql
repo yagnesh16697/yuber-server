@@ -2,8 +2,9 @@ type Verification {
   id: Int!
   target: String!
   payLoad: String!
-  used: Boolean!
   key: String!
+  used: Boolean!
+  user: User!
   createdAt: String!
   updatedAt: String!
 }
