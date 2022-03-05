@@ -1,6 +1,6 @@
 export type resolver = (parent: any, args: any, context: any, info: any) => any;
 
-export interface Resolver {
+export interface Resolvers {
   [key: string]: {
     [key: string]: Resolver;
   };
